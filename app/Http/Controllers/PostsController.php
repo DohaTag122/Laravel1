@@ -64,10 +64,10 @@ class PostsController extends Controller
         ]);*/
     }
   
-    public function update(Post $post)
+    public function update(Post $post,StorePostRequest $request)
     {
        // Post::update(request()->all());
-      
+     // dd($post);
         Post::where('id',$post->id)->update(['title'=>request()->title]);
         Post::where('id',$post->id)->update(['description'=>request()->description]);
 

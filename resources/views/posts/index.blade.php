@@ -17,7 +17,6 @@
   <tbody>
 
   @foreach($posts as $post)
-  <?php echo $post ;?>
   
     <tr>
       <th scope="row">{{$post->id}}</th>
