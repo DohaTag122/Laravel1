@@ -17,7 +17,7 @@
   <tbody>
 
   @foreach($posts as $post)
-  
+  {{$post}}
     <tr>
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
@@ -33,7 +33,7 @@
         <form action="{{route('posts.delete',$post->id)}}" method="post">  
           @csrf
           @method("delete")
-          <input type ="submit"  class="btn btn-danger"value="Delete"> 
+          <input type ="submit"  class="btn btn-danger"value="Delete" onClick="return confirm('are you sure')"> 
         </form >
       </td>
     </tr>
