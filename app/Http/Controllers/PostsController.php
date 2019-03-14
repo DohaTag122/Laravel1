@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Http\Requests\Post\StorePostRequest;
+
 
 class PostsController extends Controller
 {
@@ -24,7 +26,7 @@ class PostsController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
         Post::create(request()->all());
 
@@ -65,6 +67,7 @@ class PostsController extends Controller
     public function update(Post $post)
     {
        // Post::update(request()->all());
+      
         Post::where('id',$post->id)->update(['title'=>request()->title]);
         Post::where('id',$post->id)->update(['description'=>request()->description]);
 

@@ -13,7 +13,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:3|unique',
+            'description' => 'required|min:10'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'The Title Is Required Please Fill It',
+            'title.min:3'=>'THe Min Char is 3',
+            'title.unique'=>'The Title Do not reapet '
         ];
     }
 }
