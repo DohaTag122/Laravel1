@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Http\Requests\Post\StorePostRequest;
-
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::all()
+            'posts' => Post::paginate(3)
         ]);
     }
 

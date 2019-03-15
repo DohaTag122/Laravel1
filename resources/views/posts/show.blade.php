@@ -24,6 +24,7 @@
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
       <td>{{$post->description}}</td>
+      <td>{{$post->created_at->toDayDateTimeString()}}</td>
 
       <td>{{ isset($post->user) ? $post->user->name : 'Not Found'}}</td>
       </tr>

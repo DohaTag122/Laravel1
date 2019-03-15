@@ -9,6 +9,7 @@
       <th scope="col">Title</th>
       <th scope="col">Description</th>
       <th scope="col">Creator Name</th>
+      <th scope="col">Date Create on</th>
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -25,9 +26,11 @@
 
       <td>{{ isset($post->user) ? $post->user->name : 'Not Found'}}</td>
       
+      <td>{{date('d-m-Y', strtotime($post->created_at))}}</td>
+     
       <td><a href="{{route('posts.show',$post->id)}}" class="btn btn-info">View</a></td>
       <td><a href="{{route('posts.edit',$post->id)}}" class="btn btn-warning">Update</a></td>
-    
+      
       
       <td>
         <form action="{{route('posts.delete',$post->id)}}" method="post">  
@@ -38,6 +41,7 @@
       </td>
     </tr>
     @endforeach
+    {{ $posts->links() }}
 
   </tbody>
 </table>
