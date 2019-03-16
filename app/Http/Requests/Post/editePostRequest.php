@@ -4,8 +4,7 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-class StorePostRequest extends FormRequest
+class editePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +24,8 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'title' => 'required|min:3|unique:posts,id,'.$this->id // the best make new class for update
-            'title' => 'required|min:3|unique:posts'
+             'title' => 'required|min:3|unique:posts,id,'.$this->id 
+           
             ,
             'description' => 'required|min:10'
             ,

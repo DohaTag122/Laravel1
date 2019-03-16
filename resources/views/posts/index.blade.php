@@ -18,7 +18,7 @@
   <tbody>
 
   @foreach($posts as $post)
-  {{$post}}
+  
     <tr>
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>

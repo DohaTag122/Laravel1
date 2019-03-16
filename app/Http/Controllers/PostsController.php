@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\User;
 use App\Http\Requests\Post\StorePostRequest;
+use App\Http\Requests\Post\editePostRequest;
 use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
@@ -13,7 +14,7 @@ class PostsController extends Controller
     public function index()
     {
         return view('posts.index', [
-            'posts' => Post::paginate(3)
+            'posts' => Post::with('user')->paginate(3)
         ]);
     }
 
@@ -64,7 +65,7 @@ class PostsController extends Controller
         ]);*/
     }
   
-    public function update(Post $post,StorePostRequest $request)
+    public function update(Post $post,editePostRequest $request)
     {
        // Post::update(request()->all());
      // dd($post);
