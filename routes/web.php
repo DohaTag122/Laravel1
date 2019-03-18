@@ -49,6 +49,9 @@ Route::group(['middleware' => 'auth'], function () {
     ->name('posts.update')
    ; 
 });
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+//Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
 
 
 Auth::routes();

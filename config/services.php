@@ -19,6 +19,11 @@ return [
         'secret' => env('MAILGUN_SECRET'),
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => 'http://FirstApp/login/github/callback',
+    ],
 
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
